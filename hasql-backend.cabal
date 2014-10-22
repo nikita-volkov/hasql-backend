@@ -1,16 +1,15 @@
 name:
-  hasql
+  hasql-backend
 version:
   0.1.0
 synopsis:
-  A minimalistic general high level API for relational databases
 description:
 category:
   Database
 homepage:
-  https://github.com/nikita-volkov/hasql 
+  https://github.com/nikita-volkov/hasql-backend 
 bug-reports:
-  https://github.com/nikita-volkov/hasql/issues 
+  https://github.com/nikita-volkov/hasql-backend/issues 
 author:
   Nikita Volkov <nikita.y.volkov@mail.ru>
 maintainer:
@@ -31,7 +30,7 @@ source-repository head
   type:
     git
   location:
-    git://github.com/nikita-volkov/hasql.git
+    git://github.com/nikita-volkov/hasql-backend.git
 
 
 library
