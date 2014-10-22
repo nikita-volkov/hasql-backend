@@ -2,10 +2,7 @@
 -- An open API for implementation of specific backend drivers.
 module Hasql.Backend where
 
-import BasePrelude hiding (Error)
-import Data.Text (Text)
-import Data.ByteString (ByteString)
-import ListT (ListT)
+import Hasql.Backend.Prelude
 
 
 data Error =

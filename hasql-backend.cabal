@@ -37,6 +37,8 @@ source-repository head
 library
   hs-source-dirs:
     library
+  other-modules:
+    Hasql.Backend.Prelude
   exposed-modules:
     Hasql.Backend
   build-depends:
