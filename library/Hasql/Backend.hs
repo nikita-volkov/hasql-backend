@@ -12,14 +12,17 @@ data Error =
   -- |
   -- The connection got interrupted.
   ConnectionLost Text |
-  UnexpectedResultStructure Text |
-  -- | 
-  -- Type, input and parser error.
-  UnparsableResult TypeRep ByteString Text |
+  -- |
+  -- An erroneous or an unparsable result.
+  UnexpectedResult Text |
   -- |
   -- A transaction concurrency conflict, 
   -- which indicates that it should be retried.
-  TransactionConflict
+  TransactionConflict |
+  -- |
+  -- An operation, 
+  -- which requires a database transaction was executed without one.
+  NotInTransaction
   deriving (Show, Typeable)
 
 instance Exception Error
