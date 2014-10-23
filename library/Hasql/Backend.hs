@@ -96,7 +96,7 @@ class Backend b where
   finishTransaction :: Bool -> Connection b -> IO ()
 
 
-class Backend b => Mapping b v where
+class Mapping b v where
   renderValue :: v -> StatementArgument b
   parseResult :: Result b -> Either Text v
 
