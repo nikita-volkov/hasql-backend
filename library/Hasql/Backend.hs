@@ -18,7 +18,7 @@ data Error =
   UnparsableResult TypeRep ByteString Text |
   -- |
   -- A transaction concurrency conflict, 
-  -- whic indicates that it should be retried.
+  -- which indicates that it should be retried.
   TransactionConflict
   deriving (Show, Typeable)
 
@@ -61,6 +61,8 @@ class Backend b where
   -- |
   -- A raw value returned from the database.
   data Result b
+  -- |
+  -- A backend-specific connection.
   data Connection b
   -- |
   -- Open a connection using the backend's settings.
@@ -96,6 +98,8 @@ class Backend b where
   finishTransaction :: Bool -> Connection b -> IO ()
 
 
+-- |
+-- Support by a backend of a specific data type.
 class Mapping b v where
   renderValue :: v -> StatementArgument b
   parseResult :: Result b -> Either Text v
