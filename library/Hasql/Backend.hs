@@ -83,7 +83,7 @@ class Backend b where
   -- |
   -- Execute a statement,
   -- returning the amount of affected rows.
-  executeAndCountEffects :: Statement b -> Connection b -> IO Integer
+  executeAndCountEffects :: Statement b -> Connection b -> IO Word64
   -- |
   -- Start a transaction in the specified mode.
   beginTransaction :: TransactionMode -> Connection b -> IO ()
