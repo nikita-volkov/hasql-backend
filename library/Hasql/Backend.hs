@@ -13,8 +13,14 @@ data Error =
   -- The connection got interrupted.
   ConnectionLost Text |
   -- |
-  -- An erroneous or an unparsable result.
+  -- Some kind of error on backend.
+  ErroneousResult Text |
+  -- |
+  -- An unexpected or an unparsable result.
   UnexpectedResult Text |
+  -- |
+  -- An unparsable statement template.
+  UnparsableTemplate Text |
   -- |
   -- A transaction concurrency conflict, 
   -- which indicates that it should be retried.
