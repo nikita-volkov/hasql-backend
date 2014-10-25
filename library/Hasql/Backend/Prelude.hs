@@ -21,3 +21,6 @@ import Data.Text as Exports (Text)
 -------------------------
 import Data.ByteString as Exports (ByteString)
 
+-- vector
+-------------------------
+import Data.Vector as Exports (Vector)

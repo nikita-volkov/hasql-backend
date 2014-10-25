@@ -54,7 +54,7 @@ type TransactionMode =
 -- |
 -- A width of a row and a stream of serialized values.
 type ResultsStream b =
-  ListT IO [Result b]
+  ListT IO (Vector (Result b))
 
 
 -- |
