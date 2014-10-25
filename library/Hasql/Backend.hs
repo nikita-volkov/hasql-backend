@@ -52,9 +52,14 @@ type TransactionMode =
 
 
 -- |
--- A width of a row and a stream of serialized values.
-type ResultsStream b =
+-- A stream of rows of a result.
+type Stream b =
   ListT IO (Vector (Result b))
+
+-- |
+-- A matrix of a result.
+type Matrix b =
+  Vector (Vector (Result b))
 
 
 -- |
@@ -84,13 +89,13 @@ class Backend b where
   execute :: Statement b -> Connection b -> IO ()
   -- |
   -- Execute a statement
-  -- and stream the results.
-  executeAndStream :: Statement b -> Connection b -> IO (ResultsStream b)
+  -- and get a matrix of results.
+  executeAndGetMatrix :: Statement b -> Connection b -> IO (Matrix b)
   -- |
   -- Execute a statement
   -- and stream the results using a cursor.
   -- This function will only be used from inside of transactions.
-  executeAndStreamWithCursor :: Statement b -> Connection b -> IO (ResultsStream b)
+  executeAndStream :: Statement b -> Connection b -> IO (Stream b)
   -- |
   -- Execute a statement,
   -- returning the amount of affected rows.
@@ -100,7 +105,7 @@ class Backend b where
   beginTransaction :: TransactionMode -> Connection b -> IO ()
   -- |
   -- Finish the transaction, 
-  -- while releasing all the resources acquired with 'executeAndStreamWithCursor'.
+  -- while releasing all the resources acquired with 'executeAndStream'.
   --  
   -- The boolean defines whether to commit the updates,
   -- otherwise it rolls back.
