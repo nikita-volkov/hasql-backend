@@ -59,7 +59,7 @@ type Stream b =
 -- |
 -- A matrix of a result.
 type Matrix b =
-  [Vector (Result b)]
+  Vector (Vector (Result b))
 
 
 -- |
