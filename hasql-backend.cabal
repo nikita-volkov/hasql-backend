@@ -1,7 +1,7 @@
 name:
   hasql-backend
 version:
-  0.1.0
+  0.2.0
 synopsis:
   API for backends of "hasql"
 description:

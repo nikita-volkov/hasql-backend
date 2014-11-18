@@ -63,9 +63,10 @@ type Matrix b =
 
 
 -- |
--- A template statement with values for placeholders.
+-- A statement template with values for placeholders
+-- and a flag, defining, whether it is preparable.
 type Statement b =
-  (ByteString, [StatementArgument b])
+  (ByteString, [StatementArgument b], Bool)
 
 
 class Backend b where
