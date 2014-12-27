@@ -7,11 +7,25 @@ where
 
 -- base-prelude
 -------------------------
-import BasePrelude as Exports
+import BasePrelude as Exports hiding (left, right, isLeft, isRight)
+
+-- transformers
+-------------------------
+import Control.Monad.Trans.Maybe as Exports
 
 -- list-t
 -------------------------
 import ListT as Exports (ListT)
+
+-- either
+-------------------------
+import Control.Monad.Trans.Either as Exports
+import Data.Either.Combinators as Exports
+
+-- free
+-------------------------
+import Control.Monad.Trans.Free as Exports
+import Control.Monad.Free.TH as Exports
 
 -- text
 -------------------------
