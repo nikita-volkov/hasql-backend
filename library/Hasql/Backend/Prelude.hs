@@ -11,6 +11,8 @@ import BasePrelude as Exports hiding (left, right, isLeft, isRight)
 
 -- transformers
 -------------------------
+import Control.Monad.IO.Class as Exports
+import Control.Monad.Trans.Class as Exports
 import Control.Monad.Trans.Maybe as Exports
 
 -- list-t
