@@ -44,8 +44,7 @@ type ResultMatrix c =
 -------------------------
 
 -- | 
--- A statement template with values for placeholders
--- and a flag, defining, whether it is preparable.
+-- A statement template packed with its values and settings.
 data Stmt c =
   Stmt {
     stmtTemplate :: !Text,
