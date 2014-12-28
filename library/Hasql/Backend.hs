@@ -119,7 +119,6 @@ type Tx c =
 data TxF c x =
   UnitTx (Stmt c) x |
   CountTx (Stmt c) (Word64 -> x) |
-  MaybeTx (Stmt c) (Maybe (ResultRow c) -> x) |
   VectorTx (Stmt c) (Vector (ResultRow c) -> x) |
   StreamTx (Stmt c) (ListT (Tx c) (ResultRow c) -> x)
   deriving (Functor)
@@ -130,9 +129,6 @@ unitTx s = liftF (UnitTx s ())
 
 countTx :: Stmt c -> Tx c Word64
 countTx s = liftF (CountTx s id)
-
-maybeTx :: Stmt c -> Tx c (Maybe (ResultRow c))
-maybeTx s = liftF (MaybeTx s id)
 
 vectorTx :: Stmt c -> Tx c (Vector (ResultRow c))
 vectorTx s = liftF (VectorTx s id)
