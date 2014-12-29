@@ -1,3 +1,6 @@
+# 0.4.0
+* Parameterize `StreamTx` with the batch size
+
 # 0.3.0 - Complete overhaul
 * Dropped the `Backend` class and introduced several others.
 * Introduced a free monad based transactions API.

@@ -120,7 +120,7 @@ data TxF c x =
   UnitTx (Stmt c) x |
   CountTx (Stmt c) (Word64 -> x) |
   VectorTx (Stmt c) (Vector (ResultRow c) -> x) |
-  StreamTx (Stmt c) (ListT (Tx c) (ResultRow c) -> x)
+  StreamTx Int (Stmt c) (ListT (Tx c) (ResultRow c) -> x)
   deriving (Functor)
 
 
@@ -133,8 +133,8 @@ countTx s = liftF (CountTx s id)
 vectorTx :: Stmt c -> Tx c (Vector (ResultRow c))
 vectorTx s = liftF (VectorTx s id)
 
-streamTx :: Stmt c -> Tx c (ListT (Tx c) (ResultRow c))
-streamTx s = liftF (StreamTx s id)
+streamTx :: Int -> Stmt c -> Tx c (ListT (Tx c) (ResultRow c))
+streamTx n s = liftF (StreamTx n s id)
 
 
 
