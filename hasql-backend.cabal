@@ -1,7 +1,7 @@
 name:
   hasql-backend
 version:
-  0.4.1.1
+  0.4.2
 synopsis:
   API for backends of "hasql"
 description:
@@ -48,7 +48,7 @@ library
     -- data:
     bytestring < 0.11,
     text < 2,
-    vector < 0.11,
+    vector < 0.12,
     -- control:
     either >= 4.3 && < 5,
     free >= 4.6 && < 5,
@@ -56,8 +56,6 @@ library
     transformers >= 0.3 && < 0.5,
     -- general:
     base-prelude < 0.2
-  ghc-options:
-    -funbox-strict-fields
   default-extensions:
     Arrows, BangPatterns, ConstraintKinds, DataKinds, DefaultSignatures, DeriveDataTypeable, DeriveFunctor, DeriveGeneric, EmptyDataDecls, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, GeneralizedNewtypeDeriving, ImpredicativeTypes, LambdaCase, LiberalTypeSynonyms, MagicHash, MultiParamTypeClasses, MultiWayIf, NoImplicitPrelude, NoMonomorphismRestriction, OverloadedStrings, PatternGuards, ParallelListComp, QuasiQuotes, RankNTypes, RecordWildCards, ScopedTypeVariables, StandaloneDeriving, TemplateHaskell, TupleSections, TypeFamilies, TypeOperators, UnboxedTuples
   default-language:
